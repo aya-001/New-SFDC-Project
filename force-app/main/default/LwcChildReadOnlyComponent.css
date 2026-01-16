@@ -1,0 +1,16 @@
+.iconclass {
+	display: flex;
+}
+/* 
+.title-margin{
+	margin: 5px;
+} */
+
+
+/* .custom-textarea{
+	 --sds-c-textarea-sizing-min-height:500px !important;
+} */
+
+.slds-card__header{
+	margin: 0px !important;
+}
