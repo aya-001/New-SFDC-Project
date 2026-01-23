@@ -1,0 +1,15 @@
+<template>
+    <div >
+        <lightning-textarea 
+        class="textarea" 
+        style={textareaStyle}
+        label={fieldLabel} 
+        name="input" 
+        value={defaultText}
+        onchange={onBlurHandler}
+        required={isRequired}
+        message-when-too-long={tooLongMessage}
+        ></lightning-textarea>
+        <div class="slds-text-body_small slds-m-top_xx-small">{currentCount} / {maxChars}</div>
+    </div>
+</template>
