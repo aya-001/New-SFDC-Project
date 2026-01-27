@@ -12,7 +12,7 @@
 		<targetConfig targets="lightning__FlowScreen">
 			<property name="fieldLabel" label="field Label" type="String" />
 			<property name="fieldValue" label="field Value" type="String" />
-			<!-- <property name="fieldType" label="field Type" type="String" /> -->
+			<property name="isRichText" label="is RichText" type="Boolean" />
 			<property name="fieldLevelHelp" label="field Level Help" type="String" />
 		</targetConfig>
 	</targetConfigs>
