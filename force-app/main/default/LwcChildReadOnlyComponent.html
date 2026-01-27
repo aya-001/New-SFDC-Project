@@ -1,16 +1,32 @@
-<template> 
-    <lightning-card title="" >
-        <!-- longtext field   onchange={handleTextAreaChange}-->
-            <div class="slds-border_top">
-                <lightning-textarea 
-                label={fieldLabel} 
-                value={fieldValue} 
-                disabled="false" 
-                field-level-help={fieldLevelHelp} 
-                class="title-margin custom-textarea" 
-                style={textareaStyle} 
-                ></lightning-textarea>
-            </div>
-        </lightning-card>  
-   <!-- type={fieldType}  -->
+<template>
+    <lightning-card title="">
+        <div class="">
+            <!-- Label + Help (to mimic lightning-textarea label/tooltip) -->
+                <div class="slds-form-element">
+                    <!-- help text -->
+                    <label class="slds-form-element__label label-with-icon">
+                         <span>{fieldLabel}</span>
+                         <!-- <div class="slds-p-bottom_xxx-small"> -->
+                            <lightning-helptext if:true={fieldLevelHelp} content={fieldLevelHelp}></lightning-helptext>
+                         <!-- </div> -->
+                    </label>
+
+                    <!-- text -->
+                    <div class="slds-form-element__control color-container">
+                        <!-- rich text -->
+                        <template if:true={renderRichText}>
+                            <lightning-formatted-rich-text value={valueToDisplay}></lightning-formatted-rich-text>
+                        </template>
+
+                        <!-- plain text/ long text -->
+                        <template if:false={renderRichText}>
+                            <div class="plain-text" role="textbox" aria-readonly="true">
+                                {valueToDisplay}
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
+        </div>
+    </lightning-card>
 </template>
